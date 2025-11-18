@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">aplicacion_moviles3C</string>
+
+    <string name="error_email_required">Ingresa tu correo corporativo</string>
+    <string name="error_password_required">Ingresa tu contraseña</string>
+    <string name="error_invalid_credentials">Las credenciales no son válidas. Intenta nuevamente.</string>
+    <string name="menu_bienvenida">Bienvenido, %1$s</string>
+    <string name="menu_bienvenida_generica">Bienvenido</string>
+    <string name="label_citas_guardadas">Mis citas agendadas</string>
+    <string name="hint_servicio">Describe la cita o servicio a agendar</string>
+    <string name="button_agendar">Guardar cita</string>
+    <string name="message_cita_guardada">Cita agendada correctamente</string>
+    <string name="title_quienes_somos">¿Quiénes somos?</string>
+    <string name="text_quienes_somos">TecnoWorld Solutions es un integrador tecnológico especializado en consultoría, soporte y comercialización de dispositivos inteligentes para empresas y personas.</string>
+    <string name="text_mision">Nuestra misión es simplificar la vida digital de nuestros clientes con soluciones accesibles, soporte cercano y productos confiables que impulsen su productividad.</string>
+    <string name="text_vision">Visualizamos un futuro donde la tecnología sea más humana, sostenible e incluyente, posicionándonos como el aliado estratégico preferido en Latinoamérica.</string>
+    <string name="title_mision">Misión</string>
+    <string name="title_vision">Visión</string>
+    <string name="title_equipo">Nuestro equipo</string>
+    <string name="text_equipo">Daniela Ortiz - CEO&#10;Carlos Martínez - Director Comercial&#10;Valeria Gómez - Ingeniera de Soporte</string>
 </resources>
