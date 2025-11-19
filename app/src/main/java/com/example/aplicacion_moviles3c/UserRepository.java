@@ -12,9 +12,9 @@ public class UserRepository {
     private final Map<String, User> users = new HashMap<>();
 
     public UserRepository() {
-        addUser("admin@tecnoworld.com", "123456", "Administración TecnoWorld");
-        addUser("asesor@tecnoworld.com", "abc123", "Asesor Comercial");
-        addUser("soporte@tecnoworld.com", "service2024", "Mesa de Soporte");
+        addUser("fundadores@zenitdigital.com", "zenit2024!", "Dirección Zenit");
+        addUser("asesoria@zenitdigital.com", "guiaPro#7", "Consultor Senior");
+        addUser("operaciones@zenitdigital.com", "deploy360", "Líder de Operaciones");
     }
 
     private void addUser(String email, String password, String displayName) {

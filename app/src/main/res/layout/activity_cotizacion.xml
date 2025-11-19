@@ -1,21 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CotizacionActivity">
+    android:padding="16dp"
+    android:background="@color/zenit_silver">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:orientation="vertical">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tipo de Computador" />
+            android:text="@string/cotizacion_title"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+            android:textColor="@color/zenit_text_primary"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/cotizacion_intro"
+            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+            android:textColor="@color/zenit_text_secondary" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/cotizacion_tipo"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            android:textColor="@color/zenit_text_primary" />
 
         <RadioGroup
             android:id="@+id/radioGroupTipo"
@@ -27,20 +44,24 @@
                 android:id="@+id/radioButtonEscritorio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:checked="true"
                 android:text="Escritorio" />
 
             <RadioButton
                 android:id="@+id/radioButtonPortatil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
                 android:text="Portátil" />
         </RadioGroup>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Procesador" />
+            android:text="@string/cotizacion_procesador"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            android:textColor="@color/zenit_text_primary" />
 
         <Spinner
             android:id="@+id/spinnerProcesador"
@@ -48,10 +69,12 @@
             android:layout_height="wrap_content" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Memoria RAM" />
+            android:text="@string/cotizacion_ram"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            android:textColor="@color/zenit_text_primary" />
 
         <Spinner
             android:id="@+id/spinnerRam"
@@ -59,23 +82,80 @@
             android:layout_height="wrap_content" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Placa Base" />
+            android:text="@string/cotizacion_motherboard"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            android:textColor="@color/zenit_text_primary" />
 
         <Spinner
             android:id="@+id/spinnerMotherboard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <Button
-            android:id="@+id/buttonSolicitarCotizacion"
-            android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="24dp"
-            android:text="Solicitar Cotización" />
+            android:layout_marginTop="16dp"
+            android:text="@string/cotizacion_ssd"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            android:textColor="@color/zenit_text_primary" />
 
+        <Spinner
+            android:id="@+id/spinnerSsd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/cotizacion_monitor"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            android:textColor="@color/zenit_text_primary" />
+
+        <Spinner
+            android:id="@+id/spinnerMonitor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/cotizacion_fuente"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            android:textColor="@color/zenit_text_primary" />
+
+        <Spinner
+            android:id="@+id/spinnerFuente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonSolicitarCotizacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/cotizacion_action" />
+
+        <TextView
+            android:id="@+id/textViewResultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_card"
+            android:padding="16dp"
+            android:text="@string/cotizacion_result_placeholder"
+            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+            android:textColor="@color/zenit_text_secondary" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonVolverMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/action_volver_menu" />
     </LinearLayout>
 </ScrollView>

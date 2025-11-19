@@ -25,6 +25,7 @@ public class AgendarServicioActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agendar_servicio);
+        NavigationHelper.setupMenuButton(this);
 
         CalendarView calendarView = findViewById(R.id.calendarView);
         serviceEditText = findViewById(R.id.editTextServicio);

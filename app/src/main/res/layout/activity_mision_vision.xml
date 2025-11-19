@@ -10,18 +10,10 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/ic_equipo"
-            android:contentDescription="@string/title_quienes_somos" />
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/title_quienes_somos"
+            android:text="@string/title_mision"
             android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
             android:textColor="@color/zenit_text_primary"
             android:textStyle="bold" />
@@ -29,51 +21,44 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="@string/text_quienes_somos"
+            android:layout_marginTop="8dp"
+            android:text="@string/text_mision"
             android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
             android:textColor="@color/zenit_text_secondary" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/title_historia"
-            android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+            android:layout_marginTop="24dp"
+            android:text="@string/title_vision"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
             android:textColor="@color/zenit_text_primary"
             android:textStyle="bold" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/text_historia_detalle"
-            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
-            android:textColor="@color/zenit_text_secondary" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/title_equipo"
-            android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
-            android:textColor="@color/zenit_text_primary"
-            android:textStyle="bold" />
-
-        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:cardCornerRadius="24dp"
-            app:cardElevation="4dp">
+            android:text="@string/text_vision"
+            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+            android:textColor="@color/zenit_text_secondary" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="@string/text_equipo"
-                android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
-                android:textColor="@color/zenit_text_secondary" />
-        </com.google.android.material.card.MaterialCardView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/title_actividad"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+            android:textColor="@color/zenit_text_primary"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/text_actividad"
+            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+            android:textColor="@color/zenit_text_secondary" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonVolverMenu"

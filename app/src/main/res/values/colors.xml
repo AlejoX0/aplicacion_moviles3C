@@ -2,4 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="zenit_navy">#0F172A</color>
+    <color name="zenit_blue">#1C3FAA</color>
+    <color name="zenit_cyan">#38BDF8</color>
+    <color name="zenit_silver">#F1F5F9</color>
+    <color name="zenit_text_primary">#0B1220</color>
+    <color name="zenit_text_secondary">#4B5563</color>
 </resources>
