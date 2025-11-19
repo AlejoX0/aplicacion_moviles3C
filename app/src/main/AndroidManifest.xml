@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -20,12 +22,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".PresentacionActivity" />
         <activity android:name=".MenuActivity" />
         <activity android:name=".AgendarServicioActivity" />
         <activity android:name=".CatalogoActivity" />
         <activity android:name=".CotizacionActivity" />
         <activity android:name=".QuienesSomosActivity" />
+        <activity android:name=".TemaPrincipalActivity" />
+        <activity android:name=".MisionVisionActivity" />
+        <activity android:name=".GaleriaActivity" />
+        <activity android:name=".VideoPromocionalActivity" />
+        <activity android:name=".ContactanosActivity" />
+        <activity android:name=".RedesSocialesActivity" />
     </application>
 
 </manifest>

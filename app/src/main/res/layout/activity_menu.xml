@@ -1,36 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="16dp"
+    android:background="@color/zenit_silver"
     tools:context=".MenuActivity">
 
-    <Button
-        android:id="@+id/buttonAgendar"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Agendar Servicio"/>
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <Button
-        android:id="@+id/buttonCatalogo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Catálogo"/>
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="6dp">
 
-    <Button
-        android:id="@+id/buttonCotizacion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Cotización"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
 
-    <Button
-        android:id="@+id/buttonQuienesSomos"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Quiénes Somos"/>
+                <TextView
+                    android:id="@+id/textViewGreeting"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/menu_bienvenida_generica"
+                    android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+                    android:textColor="@color/zenit_text_primary"
+                    android:textStyle="bold"
+                    tools:text="Hola, Dirección Zenit" />
 
-</LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/menu_slogan"
+                    android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                    android:textColor="@color/zenit_text_secondary" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            android:showDividers="middle"
+            android:dividerPadding="12dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonPresentacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_presentacion" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonTemaPrincipal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_tema_principal" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonCatalogo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_catalogo" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonAgendar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_agenda" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonCotizacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_cotizacion" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonQuienesSomos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_quienes" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonMisionVision"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_mision" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonGaleria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_galeria" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonVideo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_video" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonContactanos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_contacto" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonRedes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/menu_redes" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

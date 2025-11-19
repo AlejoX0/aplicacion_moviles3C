@@ -1,3 +1,120 @@
 <resources>
-    <string name="app_name">aplicacion_moviles3C</string>
+    <string name="app_name">Zenit Digital</string>
+
+    <!-- Login -->
+    <string name="login_title">Bienvenido a Zenit</string>
+    <string name="login_subtitle">Diseñamos estaciones de trabajo y ecosistemas tecnológicos a la medida.</string>
+    <string name="hint_email">Correo corporativo</string>
+    <string name="hint_password">Contraseña</string>
+    <string name="action_login">Ingresar</string>
+    <string name="login_footer">Si olvidaste tus datos comunícate con el equipo de plataforma.</string>
+    <string name="error_email_required">Ingresa tu correo corporativo</string>
+    <string name="error_password_required">Ingresa tu contraseña</string>
+    <string name="error_invalid_credentials">Las credenciales no son válidas. Intenta nuevamente.</string>
+
+    <!-- Menu -->
+    <string name="menu_bienvenida">Hola, %1$s</string>
+    <string name="menu_bienvenida_generica">Hola</string>
+    <string name="menu_slogan">Todo el poder de la asesoría Zenit en una sola app.</string>
+    <string name="menu_presentacion">Presentación</string>
+    <string name="menu_tema_principal">Tema principal</string>
+    <string name="menu_catalogo">Catálogo interactivo</string>
+    <string name="menu_agenda">Agenda y servicios</string>
+    <string name="menu_cotizacion">Cálculo de cotización</string>
+    <string name="menu_quienes">¿Quiénes somos?</string>
+    <string name="menu_mision">Misión, visión y actividad</string>
+    <string name="menu_galeria">Galería de ofertas</string>
+    <string name="menu_video">Video promocional</string>
+    <string name="menu_contacto">Contáctanos</string>
+    <string name="menu_redes">Redes sociales</string>
+
+    <!-- Navegación -->
+    <string name="action_volver_menu">Volver al menú principal</string>
+
+    <!-- Presentación -->
+    <string name="presentacion_title">Bienvenido a Zenit Digital</string>
+    <string name="presentacion_description">Aceleramos la adquisición de hardware, servicios y formación tecnológica con asesores expertos, laboratorios de prueba remotos y despliegues llave en mano.</string>
+    <string name="presentacion_highlight_one">+120 arquitecturas entregadas a startups y pymes.</string>
+    <string name="presentacion_highlight_two">Centros de datos modulares y escritorios creativos listos en 10 días.</string>
+    <string name="presentacion_highlight_three">Cobertura nacional con soporte 24/7 y monitoreo proactivo.</string>
+
+    <!-- Tema principal -->
+    <string name="tema_principal_title">Cómo ayudamos</string>
+    <string name="tema_principal_intro">Zenit combina consultoría, hardware curado y servicios administrados para que cada organización tenga la estación perfecta.</string>
+    <string name="tema_principal_card_1_title">Arquitectura a medida</string>
+    <string name="tema_principal_card_1_desc">Evaluamos cargas de trabajo, priorizamos compatibilidades y diseñamos configuraciones únicas para cada área.</string>
+    <string name="tema_principal_card_2_title">Implementación guiada</string>
+    <string name="tema_principal_card_2_desc">Un squad acompaña la instalación, pruebas, capacitación y documentación en sitio u online.</string>
+    <string name="tema_principal_card_3_title">Evolución continua</string>
+    <string name="tema_principal_card_3_desc">Sensores IoT y tableros de salud permiten planear actualizaciones antes de que impacten el negocio.</string>
+
+    <!-- Agenda -->
+    <string name="agenda_title">Agenda estratégica</string>
+    <string name="agenda_subtitle">Selecciona la fecha y cuéntanos el objetivo de la sesión de asesoría.</string>
+    <string name="label_citas_guardadas">Mis citas agendadas</string>
+    <string name="hint_servicio">Describe la cita o servicio a agendar</string>
+    <string name="button_agendar">Guardar cita</string>
+    <string name="message_cita_guardada">Cita agendada correctamente</string>
+
+    <!-- Catálogo -->
+    <string name="catalogo_title">Catálogo Zenit</string>
+    <string name="catalogo_subtitle">Filtra por categoría y descubre equipos certificados para audio, gaming, productividad y centros de comando.</string>
+    <string name="catalogo_chip_todos">Todos</string>
+    <string name="catalogo_chip_audio">Audífonos</string>
+    <string name="catalogo_chip_perifericos">Teclados y mouse</string>
+    <string name="catalogo_chip_mousepad">Mousepads</string>
+    <string name="catalogo_chip_monitores">Monitores</string>
+    <string name="catalogo_chip_accesorios">Accesorios</string>
+
+    <!-- Cotización -->
+    <string name="cotizacion_title">Simulador de cotización</string>
+    <string name="cotizacion_intro">Selecciona los componentes que mejor describen el proyecto y obtén un estimado inmediato.</string>
+    <string name="cotizacion_tipo">Tipo de computador</string>
+    <string name="cotizacion_procesador">Procesador</string>
+    <string name="cotizacion_ram">Memoria RAM</string>
+    <string name="cotizacion_motherboard">Placa base</string>
+    <string name="cotizacion_ssd">Disco sólido</string>
+    <string name="cotizacion_monitor">Monitor</string>
+    <string name="cotizacion_fuente">Fuente de poder</string>
+    <string name="cotizacion_action">Calcular inversión</string>
+    <string name="cotizacion_result_placeholder">Aquí verás el resumen con el total estimado.</string>
+    <string name="cotizacion_result_format">Configuración %1$s\n%2$s\nTotal estimado: $%3$s COP</string>
+
+    <!-- Quiénes somos -->
+    <string name="title_quienes_somos">¿Quiénes somos?</string>
+    <string name="text_quienes_somos">Zenit nace del sueño de Sara Rojas y Emilio Calderón, dos estudiantes de Ingeniería de Sistemas apasionados por el hardware. Después de acompañar a sus compañeros en la elección de sus primeros computadores, detectaron que el mercado no ofrecía asesorías completas ni transparentes. Convirtieron esa frustración en una empresa que escucha, analiza y entrega soluciones tecnológicas hechas a la medida.</string>
+    <string name="title_historia">Nuestra historia</string>
+    <string name="text_historia_detalle">En 2020 comenzaron asesorando a amigos universitarios y hoy orquestan laboratorios, talleres y despliegues corporativos en más de 12 ciudades. La transparencia y el acompañamiento humano siguen siendo su brújula.</string>
+    <string name="title_equipo">Equipo fundador</string>
+    <string name="text_equipo">Sara Rojas – Estratega de Innovación\nEmilio Calderón – Arquitecto de Soluciones\nLaura Nieto – Experta en experiencia de cliente</string>
+
+    <!-- Misión visión -->
+    <string name="title_mision">Misión</string>
+    <string name="text_mision">Facilitar la adquisición de tecnología con asesoría honesta, prototipos rápidos y despliegues confiables que impulsen los proyectos de nuestros clientes.</string>
+    <string name="title_vision">Visión</string>
+    <string name="text_vision">Ser el referente latinoamericano en soluciones de hardware curado, anticipando tendencias para que cada compañía evolucione sin fricciones.</string>
+    <string name="title_actividad">Actividad principal</string>
+    <string name="text_actividad">Consultoría especializada, integración de hardware, capacitación y soporte administrado para organizaciones creativas, financieras y educativas.</string>
+
+    <!-- Galería -->
+    <string name="galeria_title">Galería de productos y ofertas</string>
+    <string name="galeria_subtitle">Explora los bundles listos para entrega inmediata y las promociones activas de este mes.</string>
+
+    <!-- Video -->
+    <string name="video_title">Tour Zenit</string>
+    <string name="video_description">Conoce cómo ensamblamos, probamos y entregamos soluciones junto a nuestros fundadores.</string>
+
+    <!-- Contacto -->
+    <string name="contacto_title">Conecta con Zenit</string>
+    <string name="contacto_email">contacto@zenitdigital.com</string>
+    <string name="contacto_phone">+57 320 555 1872</string>
+    <string name="contacto_address">Calle 93 #14-20, Bogotá</string>
+    <string name="contacto_hours">Soporte 24/7 - Showroom de lunes a sábado</string>
+
+    <!-- Redes -->
+    <string name="redes_title">Redes oficiales</string>
+    <string name="redes_caption">Síguenos para conocer lanzamientos, tutoriales y transmisiones con el equipo Zenit.</string>
+
+    <!-- Botones -->
+    <string name="action_ir_al_video">Reproducir video</string>
 </resources>
