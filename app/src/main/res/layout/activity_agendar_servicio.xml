@@ -22,6 +22,20 @@
         android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
         android:textColor="@color/zenit_text_secondary" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Agendar un servicio"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selecciona la fecha en el calendario y describe la necesidad del cliente"
+        android:layout_marginBottom="12dp" />
+
     <CalendarView
         android:id="@+id/calendarView"
         android:layout_width="match_parent"
