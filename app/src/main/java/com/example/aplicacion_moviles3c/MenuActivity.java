@@ -2,8 +2,9 @@ package com.example.aplicacion_moviles3c;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.text.TextUtils;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,41 +15,27 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        Button agendarButton = findViewById(R.id.buttonAgendar);
-        Button catalogoButton = findViewById(R.id.buttonCatalogo);
-        Button cotizacionButton = findViewById(R.id.buttonCotizacion);
-        Button quienesSomosButton = findViewById(R.id.buttonQuienesSomos);
+        TextView greetingTextView = findViewById(R.id.textViewGreeting);
+        String userName = getIntent().getStringExtra(UserRepository.EXTRA_USER_NAME);
+        if (!TextUtils.isEmpty(userName)) {
+            greetingTextView.setText(getString(R.string.menu_bienvenida, userName));
+        }
 
-        agendarButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MenuActivity.this, AgendarServicioActivity.class);
-                startActivity(intent);
-            }
-        });
+        configureButton(R.id.buttonPresentacion, PresentacionActivity.class);
+        configureButton(R.id.buttonTemaPrincipal, TemaPrincipalActivity.class);
+        configureButton(R.id.buttonCatalogo, CatalogoActivity.class);
+        configureButton(R.id.buttonAgendar, AgendarServicioActivity.class);
+        configureButton(R.id.buttonCotizacion, CotizacionActivity.class);
+        configureButton(R.id.buttonQuienesSomos, QuienesSomosActivity.class);
+        configureButton(R.id.buttonMisionVision, MisionVisionActivity.class);
+        configureButton(R.id.buttonGaleria, GaleriaActivity.class);
+        configureButton(R.id.buttonVideo, VideoPromocionalActivity.class);
+        configureButton(R.id.buttonContactanos, ContactanosActivity.class);
+        configureButton(R.id.buttonRedes, RedesSocialesActivity.class);
+    }
 
-        catalogoButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MenuActivity.this, CatalogoActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        cotizacionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MenuActivity.this, CotizacionActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        quienesSomosButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MenuActivity.this, QuienesSomosActivity.class);
-                startActivity(intent);
-            }
-        });
+    private void configureButton(int id, Class<?> destination) {
+        Button button = findViewById(id);
+        button.setOnClickListener(v -> startActivity(new Intent(MenuActivity.this, destination)));
     }
 }
