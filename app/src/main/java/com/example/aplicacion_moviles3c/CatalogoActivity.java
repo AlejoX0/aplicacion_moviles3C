@@ -4,9 +4,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.material.chip.ChipGroup;
+import com.example.aplicacion_moviles3c.databinding.ActivityCatalogoBinding;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,23 +20,23 @@ public class CatalogoActivity extends AppCompatActivity {
 
     private final List<CatalogItem> catalogItems = new ArrayList<>();
     private CatalogAdapter adapter;
+    private ActivityCatalogoBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_catalogo);
+        binding = ActivityCatalogoBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        RecyclerView recyclerView = findViewById(R.id.recyclerViewCatalogo);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        binding.recyclerViewCatalogo.setLayoutManager(new LinearLayoutManager(this));
         adapter = new CatalogAdapter();
-        recyclerView.setAdapter(adapter);
+        binding.recyclerViewCatalogo.setAdapter(adapter);
 
         seedData();
         adapter.submitList(new ArrayList<>(catalogItems));
 
-        ChipGroup chipGroup = findViewById(R.id.chipGroupCategorias);
-        chipGroup.setOnCheckedStateChangeListener((group, checkedIds) -> {
-            if (checkedIds.isEmpty()) {
+        binding.chipGroupCategorias.setOnCheckedStateChangeListener((group, checkedIds) -> {
+            if (checkedIds == null || checkedIds.isEmpty()) {
                 adapter.submitList(new ArrayList<>(catalogItems));
             } else {
                 filterCatalog(checkedIds.get(0));
