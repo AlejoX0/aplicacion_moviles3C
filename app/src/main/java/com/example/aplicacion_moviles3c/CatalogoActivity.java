@@ -1,5 +1,6 @@
 package com.example.aplicacion_moviles3c;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -43,7 +44,12 @@ public class CatalogoActivity extends AppCompatActivity {
             }
         });
 
-        NavigationHelper.setupMenuButton(this);
+        binding.buttonVolverMenu.setOnClickListener(v -> {
+            Intent intent = new Intent(CatalogoActivity.this, MenuActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(intent);
+            finish();
+        });
     }
 
     private void seedData() {
