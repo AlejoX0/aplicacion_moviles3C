@@ -11,7 +11,6 @@
     <string name="error_email_required">Ingresa tu correo corporativo</string>
     <string name="error_password_required">Ingresa tu contraseña</string>
     <string name="error_invalid_credentials">Las credenciales no son válidas. Intenta nuevamente.</string>
-    <string name="title_activity_menu">MenuActivity</string>
 
     <!-- Menu -->
     <string name="menu_bienvenida">Hola, %1$s</string>
@@ -83,11 +82,11 @@
 
     <!-- Quiénes somos -->
     <string name="title_quienes_somos">¿Quiénes somos?</string>
-    <string name="text_quienes_somos">Zenit nace del sueño de Sara Rojas y Emilio Calderón, dos estudiantes de Ingeniería de Sistemas apasionados por el hardware. Después de acompañar a sus compañeros en la elección de sus primeros computadores, detectaron que el mercado no ofrecía asesorías completas ni transparentes. Convirtieron esa frustración en una empresa que escucha, analiza y entrega soluciones tecnológicas hechas a la medida.</string>
+    <string name="text_quienes_somos">Zenit nace del sueño de dos amigos de Ingeniería de Sistemas que nunca se cansaron de desarmar equipos y ayudar a otros a elegirlos. Al ver que muchas empresas y usuarios compraban sin una asesoría completa, decidieron fundar Zenit para acompañar de principio a fin: entendemos la necesidad, proponemos la arquitectura correcta y entregamos un ecosistema listo para trabajar.</string>
     <string name="title_historia">Nuestra historia</string>
-    <string name="text_historia_detalle">En 2020 comenzaron asesorando a amigos universitarios y hoy orquestan laboratorios, talleres y despliegues corporativos en más de 12 ciudades. La transparencia y el acompañamiento humano siguen siendo su brújula.</string>
+    <string name="text_historia_detalle">Iniciaron en 2020 asesorando a compañeros de universidad y rápidamente escalaron a proyectos empresariales que requerían estaciones de trabajo, servidores y aulas híbridas. Hoy Zenit opera laboratorios, talleres y despliegues corporativos en más de 12 ciudades, manteniendo la transparencia y el acompañamiento humano como brújula.</string>
     <string name="title_equipo">Equipo fundador</string>
-    <string name="text_equipo">Sara Rojas – Estratega de Innovación\nEmilio Calderón – Arquitecto de Soluciones\nLaura Nieto – Experta en experiencia de cliente</string>
+    <string name="text_equipo">Laura Rojas – Estratega de innovación\nMateo Calderón – Arquitecto de soluciones\nSofía Nieto – Experta en experiencia de cliente</string>
 
     <!-- Misión visión -->
     <string name="title_mision">Misión</string>

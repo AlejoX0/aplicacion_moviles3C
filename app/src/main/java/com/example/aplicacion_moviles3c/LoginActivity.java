@@ -3,6 +3,7 @@ package com.example.aplicacion_moviles3c;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -25,7 +26,12 @@ public class LoginActivity extends AppCompatActivity {
         userRepository = new UserRepository();
 
         Button loginButton = findViewById(R.id.buttonLogin);
-        loginButton.setOnClickListener(v -> attemptLogin());
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                attemptLogin();
+            }
+        });
     }
 
     private void attemptLogin() {
