@@ -3,43 +3,31 @@ package com.example.aplicacion_moviles3c;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Maneja un listado sencillo de usuarios permitidos para el login.
- */
 public class UserRepository {
-    public static final String EXTRA_USER_NAME = "extra_user_name";
 
-    private final Map<String, User> users = new HashMap<>();
+    public static final String EXTRA_USER_NAME = "com.example.aplicacion_moviles3c.USER_NAME";
+
+    private final Map<String, String> users = new HashMap<>();
+    private final Map<String, String> userDisplayNames = new HashMap<>();
 
     public UserRepository() {
-        addUser("fundadores@zenitdigital.com", "zenit2024!", "Dirección Zenit");
-        addUser("asesoria@zenitdigital.com", "guiaPro#7", "Consultor Senior");
-        addUser("operaciones@zenitdigital.com", "deploy360", "Líder de Operaciones");
-    }
+        // Credenciales Zenit
+        users.put("fundadores@zenitdigital.com", "zenit2024!");
+        userDisplayNames.put("fundadores@zenitdigital.com", "Dirección Zenit");
 
-    private void addUser(String email, String password, String displayName) {
-        users.put(email.trim().toLowerCase(), new User(email, password, displayName));
+        users.put("asesoria@zenitdigital.com", "guiaPro#7");
+        userDisplayNames.put("asesoria@zenitdigital.com", "Consultor Senior");
+
+        users.put("operaciones@zenitdigital.com", "deploy360");
+        userDisplayNames.put("operaciones@zenitdigital.com", "Líder de Operaciones");
     }
 
     public boolean isValid(String email, String password) {
-        User user = users.get(email.trim().toLowerCase());
-        return user != null && user.password.equals(password);
+        String storedPassword = users.get(email);
+        return storedPassword != null && storedPassword.equals(password);
     }
 
     public String getDisplayName(String email) {
-        User user = users.get(email.trim().toLowerCase());
-        return user != null ? user.displayName : "";
-    }
-
-    private static class User {
-        final String email;
-        final String password;
-        final String displayName;
-
-        private User(String email, String password, String displayName) {
-            this.email = email;
-            this.password = password;
-            this.displayName = displayName;
-        }
+        return userDisplayNames.get(email);
     }
 }

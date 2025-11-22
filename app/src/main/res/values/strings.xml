@@ -11,6 +11,7 @@
     <string name="error_email_required">Ingresa tu correo corporativo</string>
     <string name="error_password_required">Ingresa tu contraseña</string>
     <string name="error_invalid_credentials">Las credenciales no son válidas. Intenta nuevamente.</string>
+    <string name="title_activity_menu">MenuActivity</string>
 
     <!-- Menu -->
     <string name="menu_bienvenida">Hola, %1$s</string>

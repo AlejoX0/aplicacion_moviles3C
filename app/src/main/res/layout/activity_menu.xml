@@ -5,119 +5,145 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/zenit_silver"
+    android:padding="16dp"
     tools:context=".MenuActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:orientation="vertical">
 
-        <com.google.android.material.card.MaterialCardView
+        <TextView
+            android:id="@+id/textViewGreeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/menu_bienvenida_generica"
+            android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+            android:textColor="@color/zenit_text_primary"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/menu_slogan"
+            android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+            android:textColor="@color/zenit_text_secondary" />
+
+        <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="28dp"
-            app:cardElevation="6dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="24dp">
-
-                <TextView
-                    android:id="@+id/textViewGreeting"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/menu_bienvenida_generica"
-                    android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
-                    android:textColor="@color/zenit_text_primary"
-                    android:textStyle="bold"
-                    tools:text="Hola, Dirección Zenit" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="@string/menu_slogan"
-                    android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
-                    android:textColor="@color/zenit_text_secondary" />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:orientation="vertical"
-            android:showDividers="middle"
-            android:dividerPadding="12dp">
+            android:layout_marginTop="24dp"
+            android:columnCount="2"
+            android:orientation="horizontal">
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonPresentacion"
-                android:layout_width="match_parent"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginEnd="8dp"
                 android:text="@string/menu_presentacion" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonTemaPrincipal"
-                android:layout_width="match_parent"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginStart="8dp"
                 android:text="@string/menu_tema_principal" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonCatalogo"
-                android:layout_width="match_parent"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_columnWeight="1"
                 android:text="@string/menu_catalogo" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonAgendar"
-                android:layout_width="match_parent"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_columnWeight="1"
                 android:text="@string/menu_agenda" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonCotizacion"
-                android:layout_width="match_parent"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_columnWeight="1"
                 android:text="@string/menu_cotizacion" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonQuienesSomos"
-                android:layout_width="match_parent"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp"
                 android:text="@string/menu_quienes" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonMisionVision"
-                android:layout_width="match_parent"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_columnWeight="1"
                 android:text="@string/menu_mision" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonGaleria"
-                android:layout_width="match_parent"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp"
                 android:text="@string/menu_galeria" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonVideo"
-                android:layout_width="match_parent"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_columnWeight="1"
                 android:text="@string/menu_video" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonContactanos"
-                android:layout_width="match_parent"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_columnWeight="1"
                 android:text="@string/menu_contacto" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonRedes"
-                android:layout_width="match_parent"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_columnWeight="1"
                 android:text="@string/menu_redes" />
-        </LinearLayout>
+
+        </GridLayout>
+
     </LinearLayout>
 </ScrollView>
