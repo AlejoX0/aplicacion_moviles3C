@@ -22,10 +22,58 @@
         android:id="@+id/textViewCatalogoSubtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="6dp"
         android:text="@string/catalogo_subtitle"
         android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
         android:textColor="@android:color/white" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="6dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageViewHero"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:contentDescription="@string/catalogo_image_content_description"
+                android:scaleType="centerCrop"
+                android:src="@drawable/gallery_placeholder" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/textViewHeroTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/catalogo_hero_title"
+                    android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                    android:textColor="@color/zenit_text_primary"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewHeroSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/catalogo_hero_subtitle"
+                    android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                    android:textColor="@color/zenit_text_secondary" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
@@ -62,10 +110,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                app:singleSelection="true"
-                app:selectionRequired="false"
                 app:chipSpacingHorizontal="8dp"
-                app:chipSpacingVertical="8dp">
+                app:chipSpacingVertical="8dp"
+                app:selectionRequired="false"
+                app:singleSelection="true">
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipTodos"
@@ -74,29 +122,29 @@
                     android:text="@string/catalogo_chip_todos" />
 
                 <com.google.android.material.chip.Chip
-                    android:id="@+id/chipAudifonos"
+                    android:id="@+id/chipLaptops"
+                    style="@style/Widget.Material3.Chip.Suggestion"
+                    android:text="@string/catalogo_chip_laptops" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipTelefonos"
+                    style="@style/Widget.Material3.Chip.Suggestion"
+                    android:text="@string/catalogo_chip_smartphones" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipAudio"
                     style="@style/Widget.Material3.Chip.Suggestion"
                     android:text="@string/catalogo_chip_audio" />
 
                 <com.google.android.material.chip.Chip
-                    android:id="@+id/chipPerifericos"
+                    android:id="@+id/chipGaming"
                     style="@style/Widget.Material3.Chip.Suggestion"
-                    android:text="@string/catalogo_chip_perifericos" />
+                    android:text="@string/catalogo_chip_gaming" />
 
                 <com.google.android.material.chip.Chip
-                    android:id="@+id/chipMousepads"
+                    android:id="@+id/chipSmartHome"
                     style="@style/Widget.Material3.Chip.Suggestion"
-                    android:text="@string/catalogo_chip_mousepad" />
-
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipMonitores"
-                    style="@style/Widget.Material3.Chip.Suggestion"
-                    android:text="@string/catalogo_chip_monitores" />
-
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipAccesorios"
-                    style="@style/Widget.Material3.Chip.Suggestion"
-                    android:text="@string/catalogo_chip_accesorios" />
+                    android:text="@string/catalogo_chip_smarthome" />
             </com.google.android.material.chip.ChipGroup>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
@@ -118,7 +166,8 @@
         android:layout_height="0dp"
         android:layout_marginTop="12dp"
         android:layout_weight="1"
-        android:paddingBottom="4dp"
+        android:clipToPadding="false"
+        android:paddingBottom="8dp"
         tools:listitem="@layout/item_catalogo" />
 
     <com.google.android.material.button.MaterialButton

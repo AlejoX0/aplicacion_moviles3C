@@ -10,6 +10,7 @@ public class CatalogItem {
     private final String highlight;
     private final String price;
     private final int imageResId;
+    private final String imageUrl;
 
     public CatalogItem(
             String name,
@@ -18,7 +19,8 @@ public class CatalogItem {
             String description,
             String highlight,
             String price,
-            @DrawableRes int imageResId
+            @DrawableRes int imageResId,
+            String imageUrl
     ) {
         this.name = name;
         this.categoryKey = categoryKey;
@@ -27,6 +29,7 @@ public class CatalogItem {
         this.highlight = highlight;
         this.price = price;
         this.imageResId = imageResId;
+        this.imageUrl = imageUrl;
     }
 
     public String getName() {
@@ -55,5 +58,9 @@ public class CatalogItem {
 
     public int getImageResId() {
         return imageResId;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
     }
 }

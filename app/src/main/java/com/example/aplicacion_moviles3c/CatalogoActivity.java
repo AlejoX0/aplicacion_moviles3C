@@ -1,13 +1,14 @@
 package com.example.aplicacion_moviles3c;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.bumptech.glide.Glide;
 import com.example.aplicacion_moviles3c.databinding.ActivityCatalogoBinding;
 
 import java.util.ArrayList;
@@ -17,11 +18,11 @@ import java.util.Map;
 
 public class CatalogoActivity extends AppCompatActivity implements CatalogAdapter.OnItemClickListener {
 
+    private static final String CATEGORY_LAPTOPS = "laptops";
+    private static final String CATEGORY_PHONES = "phones";
     private static final String CATEGORY_AUDIO = "audio";
-    private static final String CATEGORY_PERIPHERALS = "peripherals";
-    private static final String CATEGORY_MOUSEPADS = "mousepads";
-    private static final String CATEGORY_MONITORS = "monitors";
-    private static final String CATEGORY_ACCESSORIES = "accessories";
+    private static final String CATEGORY_GAMING = "gaming";
+    private static final String CATEGORY_SMART_HOME = "smart_home";
 
     private ActivityCatalogoBinding binding;
     private CatalogAdapter adapter;
@@ -37,6 +38,7 @@ public class CatalogoActivity extends AppCompatActivity implements CatalogAdapte
         configureFilters();
         setupRecycler();
         seedCatalog();
+        bindHeroImage();
         adapter.submitList(new ArrayList<>(catalogItems));
 
         binding.chipGroupCategorias.setOnCheckedStateChangeListener((group, checkedIds) -> applyFilter(checkedIds));
@@ -50,11 +52,11 @@ public class CatalogoActivity extends AppCompatActivity implements CatalogAdapte
     }
 
     private void configureFilters() {
-        categoryFilters.put(R.id.chipAudifonos, CATEGORY_AUDIO);
-        categoryFilters.put(R.id.chipPerifericos, CATEGORY_PERIPHERALS);
-        categoryFilters.put(R.id.chipMousepads, CATEGORY_MOUSEPADS);
-        categoryFilters.put(R.id.chipMonitores, CATEGORY_MONITORS);
-        categoryFilters.put(R.id.chipAccesorios, CATEGORY_ACCESSORIES);
+        categoryFilters.put(R.id.chipLaptops, CATEGORY_LAPTOPS);
+        categoryFilters.put(R.id.chipTelefonos, CATEGORY_PHONES);
+        categoryFilters.put(R.id.chipAudio, CATEGORY_AUDIO);
+        categoryFilters.put(R.id.chipGaming, CATEGORY_GAMING);
+        categoryFilters.put(R.id.chipSmartHome, CATEGORY_SMART_HOME);
     }
 
     private void setupRecycler() {
@@ -64,160 +66,130 @@ public class CatalogoActivity extends AppCompatActivity implements CatalogAdapte
         binding.recyclerViewCatalogo.setAdapter(adapter);
     }
 
+    private void bindHeroImage() {
+        if (catalogItems.isEmpty()) {
+            return;
+        }
+
+        Glide.with(this)
+                .load(catalogItems.get(0).getImageUrl())
+                .placeholder(R.drawable.gallery_placeholder)
+                .error(R.drawable.gallery_placeholder)
+                .centerCrop()
+                .into(binding.imageViewHero);
+    }
+
     private void seedCatalog() {
         catalogItems.clear();
         catalogItems.add(new CatalogItem(
+                "MacBook Air M3 13'' (2024)",
+                CATEGORY_LAPTOPS,
+                "Ultraportátiles",
+                "Chip Apple M3, 8GB RAM y SSD de 256GB con autonomía de hasta 18h.",
+                "Ligera, silenciosa y lista para edición en movimiento.",
+                "$6.899.000 COP",
+                R.drawable.gallery_placeholder,
+                "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mba13-midnight-select-202402?wid=2000&hei=1536&fmt=jpeg&qlt=90&.v=1707434878666"
+        ));
+        catalogItems.add(new CatalogItem(
+                "Dell XPS 14 (9440)",
+                CATEGORY_LAPTOPS,
+                "Ultraportátiles",
+                "Intel Core Ultra 7, pantalla OLED 3K y chasis de aluminio mecanizado.",
+                "Para ejecutivos que necesitan potencia y estilo en viajes.",
+                "$9.800.000 COP",
+                R.drawable.gallery_placeholder,
+                "https://i.dell.com/sites/csimages/Master_Imagery/all/xps-14-9440-laptop-black-gallery-1.png"
+        ));
+        catalogItems.add(new CatalogItem(
+                "Lenovo ThinkPad X1 Carbon Gen 12",
+                CATEGORY_LAPTOPS,
+                "Ultraportátiles",
+                "Intel Core Ultra, chasis de fibra de carbono y certificación MIL-STD 810H.",
+                "Teclado legendario y conectividad 5G opcional para ejecutivos.",
+                "$8.450.000 COP",
+                R.drawable.gallery_placeholder,
+                "https://www.lenovo.com/medias/lenovo-laptop-thinkpad-x1-carbon-gen-12-front.png?context=bWFzdGVyfHJvb3R8MTYyODU4fGltYWdlL3BuZ3xoNmMvaGI5LzE2ODM1MjI4MTA4NTc0LnBuZ3wzODNhOGQwNWMyOWUyNTA2OTVhZjQ3MzRlN2UwZTUwMTJiZjMyZjdiMTA2YzRhN2NjZmY2YWYxNjQ5ZTU1NThh"
+        ));
+        catalogItems.add(new CatalogItem(
+                "iPhone 15 Pro",
+                CATEGORY_PHONES,
+                "Smartphones",
+                "Pantalla Super Retina XDR de 6.1'' y chip A17 Pro con USB-C.",
+                "Fotos ProRAW y video Log listos para postproducción móvil.",
+                "$5.799.000 COP",
+                R.drawable.gallery_placeholder,
+                "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch-bluetitanium_AV1?wid=5120&hei=2880&fmt=jpeg&qlt=80&.v=1692844597674"
+        ));
+        catalogItems.add(new CatalogItem(
+                "Samsung Galaxy S24 Ultra",
+                CATEGORY_PHONES,
+                "Smartphones",
+                "Pantalla QHD+ de 6.8'' a 120Hz, S-Pen incluido y cámara 200MP.",
+                "Integración Galaxy AI para notas, traducción y retoque.",
+                "$6.499.900 COP",
+                R.drawable.gallery_placeholder,
+                "https://images.samsung.com/is/image/samsung/p6pim/co/sm-s928bzageeo/gallery/co-galaxy-s24-ultra-sm-s928-sm-s928bzageeo-538107658"
+        ));
+        catalogItems.add(new CatalogItem(
                 "Sony WH-1000XM5",
                 CATEGORY_AUDIO,
-                "Audio profesional",
-                "Cancelación activa de ruido con 30h de batería y modo de atención rápida.",
-                "Ideal para videollamadas silenciosas y vuelos largos.",
-                "$1.690.000",
-                R.drawable.gallery_placeholder
+                "Audio",
+                "Cancelación activa de ruido, 30 horas de batería y modo atención rápida.",
+                "Auriculares referencia para viajes y videollamadas.",
+                "$1.690.000 COP",
+                R.drawable.gallery_placeholder,
+                "https://m.media-amazon.com/images/I/71CGl5+j51L._AC_SL1500_.jpg"
         ));
         catalogItems.add(new CatalogItem(
-                "Bose QuietComfort Ultra",
+                "Bose QuietComfort Ultra Earbuds",
                 CATEGORY_AUDIO,
-                "Audio profesional",
-                "Acústica inmersiva con Bluetooth multipunto y ecualizador personalizable.",
-                "Perfectos para oficinas híbridas con enfoque premium.",
-                "$2.100.000",
-                R.drawable.gallery_placeholder
+                "Audio",
+                "Cancelación adaptativa, Bluetooth multipunto y certificación IPX4.",
+                "Audio inmersivo para jornadas híbridas y desplazamientos.",
+                "$1.580.000 COP",
+                R.drawable.gallery_placeholder,
+                "https://m.media-amazon.com/images/I/51lTQGHlZhL._AC_SL1500_.jpg"
         ));
         catalogItems.add(new CatalogItem(
-                "Sennheiser Momentum 4 Wireless",
-                CATEGORY_AUDIO,
-                "Audio profesional",
-                "Drivers de 42 mm, ANC adaptativa y hasta 60 horas de autonomía.",
-                "Pensados para creativos que editan video y audio.",
-                "$1.950.000",
-                R.drawable.gallery_placeholder
+                "PlayStation 5 Slim",
+                CATEGORY_GAMING,
+                "Gaming",
+                "CPU AMD Zen 2, SSD ultra rápido y mando DualSense con hápticos.",
+                "Consola compacta para salas de experiencia y torneos.",
+                "$3.299.000 COP",
+                R.drawable.gallery_placeholder,
+                "https://m.media-amazon.com/images/I/61-0VnlzvWL._SL1500_.jpg"
         ));
         catalogItems.add(new CatalogItem(
-                "Keychron Q1 Pro",
-                CATEGORY_PERIPHERALS,
-                "Teclados y mouse",
-                "Teclado mecánico inalámbrico con marco de aluminio y perilla programable.",
-                "Incluye montaje gasket para escritura silenciosa.",
-                "$1.050.000",
-                R.drawable.gallery_placeholder
+                "Nintendo Switch OLED",
+                CATEGORY_GAMING,
+                "Gaming",
+                "Pantalla OLED de 7'', dock con puerto LAN y 64GB de almacenamiento.",
+                "Ideal para activaciones, zonas de descanso y gaming familiar.",
+                "$1.799.000 COP",
+                R.drawable.gallery_placeholder,
+                "https://m.media-amazon.com/images/I/51YsGQL8w4L._SL1000_.jpg"
         ));
         catalogItems.add(new CatalogItem(
-                "Logitech MX Mechanical",
-                CATEGORY_PERIPHERALS,
-                "Teclados y mouse",
-                "Switches low-profile, conectividad Bolt y hasta 15 días de batería.",
-                "Optimizado para escritores y desarrolladores.",
-                "$780.000",
-                R.drawable.gallery_placeholder
+                "Google Nest Hub (2da gen)",
+                CATEGORY_SMART_HOME,
+                "Hogar inteligente",
+                "Asistente con pantalla de 7'' para dashboards de salas y control de IoT.",
+                "Micrófonos de campo lejano y sensor Soli para gestos.",
+                "$629.900 COP",
+                R.drawable.gallery_placeholder,
+                "https://m.media-amazon.com/images/I/61kNq1DqdzL._AC_SL1500_.jpg"
         ));
         catalogItems.add(new CatalogItem(
-                "Razer Basilisk V3 Pro",
-                CATEGORY_PERIPHERALS,
-                "Teclados y mouse",
-                "Sensor Focus Pro 30K, rueda háptica y carga inalámbrica.",
-                "Respuesta veloz para gaming competitivo.",
-                "$720.000",
-                R.drawable.gallery_placeholder
-        ));
-        catalogItems.add(new CatalogItem(
-                "Logitech G Pro X Superlight 2",
-                CATEGORY_PERIPHERALS,
-                "Teclados y mouse",
-                "Mouse de 60 g con tecnología Lightspeed y sensor HERO 2.",
-                "Preferido por equipos de e-sports.",
-                "$920.000",
-                R.drawable.gallery_placeholder
-        ));
-        catalogItems.add(new CatalogItem(
-                "Artisan Zero XSoft XL",
-                CATEGORY_MOUSEPADS,
-                "Mousepads",
-                "Superficie japonesa de control premium con base antideslizante.",
-                "Consistencia en cada flick para shooters tácticos.",
-                "$480.000",
-                R.drawable.gallery_placeholder
-        ));
-        catalogItems.add(new CatalogItem(
-                "Razer Strider Chroma",
-                CATEGORY_MOUSEPADS,
-                "Mousepads",
-                "Alfombrilla híbrida con iluminación RGB direccionable y base firme.",
-                "Protege el escritorio y resalta el setup.",
-                "$520.000",
-                R.drawable.gallery_placeholder
-        ));
-        catalogItems.add(new CatalogItem(
-                "SteelSeries QcK Heavy XXL",
-                CATEGORY_MOUSEPADS,
-                "Mousepads",
-                "Tela microtejida de 6 mm diseñada para sensores ópticos y láser.",
-                "Formato extendido para teclado y mouse.",
-                "$210.000",
-                R.drawable.gallery_placeholder
-        ));
-        catalogItems.add(new CatalogItem(
-                "LG UltraGear 27GP850",
-                CATEGORY_MONITORS,
-                "Monitores",
-                "Panel Nano IPS QHD de 165Hz con 1ms y compatibilidad G-Sync.",
-                "Equilibrio ideal entre gaming y trabajo creativo.",
-                "$1.980.000",
-                R.drawable.gallery_placeholder
-        ));
-        catalogItems.add(new CatalogItem(
-                "Dell UltraSharp U2723QE",
-                CATEGORY_MONITORS,
-                "Monitores",
-                "Hub USB-C de 90W, 4K IPS Black y cobertura 98% DCI-P3.",
-                "Listo para estaciones con un solo cable.",
-                "$3.450.000",
-                R.drawable.gallery_placeholder
-        ));
-        catalogItems.add(new CatalogItem(
-                "Samsung Odyssey G9",
-                CATEGORY_MONITORS,
-                "Monitores",
-                "Mini-LED de 49'' con 240Hz, HDR2000 y curvatura 1000R.",
-                "Panel panorámico para trading y simuladores.",
-                "$5.900.000",
-                R.drawable.gallery_placeholder
-        ));
-        catalogItems.add(new CatalogItem(
-                "Synology DS923+",
-                CATEGORY_ACCESSORIES,
-                "Accesorios",
-                "NAS de cuatro bahías con Ryzen integrado y expansión 10GbE opcional.",
-                "Ideal para respaldos híbridos y multimedia 4K.",
-                "$3.800.000",
-                R.drawable.gallery_placeholder
-        ));
-        catalogItems.add(new CatalogItem(
-                "APC Back-UPS Pro 1500VA",
-                CATEGORY_ACCESSORIES,
-                "Accesorios",
-                "UPS interactiva con monitoreo SmartConnect y tomas protegidas.",
-                "Protege estaciones críticas y routers corporativos.",
-                "$1.320.000",
-                R.drawable.gallery_placeholder
-        ));
-        catalogItems.add(new CatalogItem(
-                "Elgato Stream Deck +",
-                CATEGORY_ACCESSORIES,
-                "Accesorios",
-                "Controles táctiles, perillas y pantalla LCD para automatizar flujos.",
-                "Streamings y macros de producción con un toque.",
-                "$1.250.000",
-                R.drawable.gallery_placeholder
-        ));
-        catalogItems.add(new CatalogItem(
-                "Samsung T7 Shield 2TB",
-                CATEGORY_ACCESSORIES,
-                "Accesorios",
-                "SSD portátil resistente a golpes y agua con hasta 1.050 MB/s.",
-                "Transporta bibliotecas creativas con seguridad.",
-                "$620.000",
-                R.drawable.gallery_placeholder
+                "Philips Hue Starter Kit (E26)",
+                CATEGORY_SMART_HOME,
+                "Hogar inteligente",
+                "Incluye bridge, 3 bombillos white & color y control desde app o asistentes.",
+                "Automatiza escenas de oficinas y zonas creativas.",
+                "$999.900 COP",
+                R.drawable.gallery_placeholder,
+                "https://m.media-amazon.com/images/I/71QWLiqLDhL._AC_SL1500_.jpg"
         ));
     }
 
@@ -248,6 +220,11 @@ public class CatalogoActivity extends AppCompatActivity implements CatalogAdapte
 
     @Override
     public void onItemClick(CatalogItem item) {
-        Toast.makeText(this, "Has hecho clic en: " + item.getName(), Toast.LENGTH_SHORT).show();
+        if (item.getImageUrl() == null || item.getImageUrl().isEmpty()) {
+            return;
+        }
+
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(item.getImageUrl()));
+        startActivity(intent);
     }
 }

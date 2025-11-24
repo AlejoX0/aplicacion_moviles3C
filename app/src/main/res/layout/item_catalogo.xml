@@ -6,38 +6,27 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="12dp"
     app:cardCornerRadius="18dp"
-    app:cardElevation="2dp"
+    app:cardElevation="3dp"
     app:cardUseCompatPadding="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:baselineAligned="false"
-        android:orientation="horizontal"
-        android:padding="16dp">
+        android:orientation="vertical">
 
-        <FrameLayout
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_marginEnd="12dp"
-            android:background="@drawable/bg_card"
-            android:foreground="?attr/selectableItemBackgroundBorderless">
-
-            <ImageView
-                android:id="@+id/imageViewItemHero"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:contentDescription="@string/catalogo_image_content_description"
-                android:padding="10dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/gallery_placeholder" />
-        </FrameLayout>
+        <ImageView
+            android:id="@+id/imageViewItemHero"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:contentDescription="@string/catalogo_image_content_description"
+            android:scaleType="centerCrop"
+            android:src="@drawable/gallery_placeholder" />
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="16dp">
 
             <TextView
                 android:id="@+id/textViewItemCategory"
@@ -55,20 +44,20 @@
                 android:id="@+id/textViewItemTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
+                android:layout_marginTop="8dp"
                 android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
                 android:textColor="@color/zenit_text_primary"
                 android:textStyle="bold"
-                tools:text="Sony WH-1000XM5" />
+                tools:text="MacBook Air M3 13'' (2024)" />
 
             <TextView
                 android:id="@+id/textViewItemDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="6dp"
                 android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
                 android:textColor="@color/zenit_text_secondary"
-                tools:text="Cancelación activa de ruido con 30h de batería." />
+                tools:text="Chip Apple M3, 8GB RAM y SSD de 256GB con autonomía de hasta 18h." />
 
             <TextView
                 android:id="@+id/textViewItemHighlight"
@@ -78,22 +67,22 @@
                 android:textAppearance="@style/TextAppearance.Material3.BodySmall"
                 android:textColor="@color/zenit_blue"
                 android:textStyle="bold"
-                tools:text="Ideal para videollamadas silenciosas" />
+                tools:text="Ligera, silenciosa y lista para edición en movimiento." />
 
             <TextView
                 android:id="@+id/textViewItemPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="12dp"
                 android:background="@drawable/bg_gradient_primary"
-                android:paddingLeft="10dp"
-                android:paddingTop="6dp"
-                android:paddingRight="10dp"
-                android:paddingBottom="6dp"
+                android:paddingLeft="12dp"
+                android:paddingTop="8dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="8dp"
                 android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"
-                tools:text="$1.690.000" />
+                tools:text="$6.899.000 COP" />
         </LinearLayout>
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>
