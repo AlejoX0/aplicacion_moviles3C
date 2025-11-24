@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 public class CatalogAdapter extends ListAdapter<CatalogItem, CatalogAdapter.ViewHolder> {
 
     private OnItemClickListener listener;
@@ -38,7 +40,8 @@ public class CatalogAdapter extends ListAdapter<CatalogItem, CatalogAdapter.View
             return oldItem.getDescription().equals(newItem.getDescription())
                     && oldItem.getPrice().equals(newItem.getPrice())
                     && oldItem.getHighlight().equals(newItem.getHighlight())
-                    && oldItem.getCategoryKey().equals(newItem.getCategoryKey());
+                    && oldItem.getCategoryKey().equals(newItem.getCategoryKey())
+                    && oldItem.getImageUrl().equals(newItem.getImageUrl());
         }
     };
 
@@ -86,12 +89,12 @@ public class CatalogAdapter extends ListAdapter<CatalogItem, CatalogAdapter.View
             price.setText(item.getPrice());
             categoryChip.setText(item.getCategoryLabel());
 
-            int imageResId = item.getImageResId();
-            if (imageResId != 0) {
-                hero.setImageResource(imageResId);
-            } else {
-                hero.setImageResource(R.drawable.gallery_placeholder);
-            }
+            Glide.with(hero.getContext())
+                    .load(item.getImageUrl())
+                    .placeholder(R.drawable.gallery_placeholder)
+                    .error(item.getImageResId() != 0 ? item.getImageResId() : R.drawable.gallery_placeholder)
+                    .centerCrop()
+                    .into(hero);
         }
     }
 }

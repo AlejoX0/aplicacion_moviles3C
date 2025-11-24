@@ -57,18 +57,20 @@
     <string name="message_cita_guardada">Cita agendada correctamente</string>
 
     <!-- Catálogo -->
-    <string name="catalogo_title">Catálogo Zenit</string>
-    <string name="catalogo_subtitle">Curamos los equipos más solicitados en audio, productividad y centros de comando. Filtra por categoría para inspirar tu próximo despliegue.</string>
+    <string name="catalogo_title">Catálogo interactivo Zenit</string>
+    <string name="catalogo_subtitle">Equipos listos para cotizar con fichas visuales y rangos de precio referenciales. Actualiza las imágenes o conserva las que incluimos.</string>
+    <string name="catalogo_hero_title">Productos listos para cotizar</string>
+    <string name="catalogo_hero_subtitle">Cada tarjeta tiene descripción, rango de precio y un espacio principal para la foto del producto.</string>
     <string name="catalogo_filters_title">Explora por categoría</string>
-    <string name="catalogo_filters_subtitle">Selecciona el tipo de solución y revisa los highlights. Cada tarjeta deja espacio para que agregues la foto del producto.</string>
+    <string name="catalogo_filters_subtitle">Elige la línea de producto para reducir el listado y revisar los equipos que recomendamos.</string>
     <string name="catalogo_chip_todos">Todos</string>
-    <string name="catalogo_chip_audio">Audífonos</string>
-    <string name="catalogo_chip_perifericos">Teclados y mouse</string>
-    <string name="catalogo_chip_mousepad">Mousepads</string>
-    <string name="catalogo_chip_monitores">Monitores</string>
-    <string name="catalogo_chip_accesorios">Accesorios</string>
-    <string name="catalogo_empty_state">No hay productos en esta categoría. Prueba otra combinación de filtros.</string>
-    <string name="catalogo_image_content_description">Imagen del producto del catálogo</string>
+    <string name="catalogo_chip_laptops">Portátiles</string>
+    <string name="catalogo_chip_smartphones">Smartphones</string>
+    <string name="catalogo_chip_audio">Audio premium</string>
+    <string name="catalogo_chip_gaming">Gaming</string>
+    <string name="catalogo_chip_smarthome">Hogar inteligente</string>
+    <string name="catalogo_empty_state">No hay productos en esta categoría. Cambia el filtro para ver más opciones.</string>
+    <string name="catalogo_image_content_description">Imagen de referencia del producto</string>
 
     <!-- Cotización -->
     <string name="cotizacion_title">Simulador de cotización</string>
