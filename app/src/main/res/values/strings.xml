@@ -90,7 +90,7 @@
     <string name="title_historia">Nuestra historia</string>
     <string name="text_historia_detalle">Iniciaron en 2020 asesorando a compañeros de universidad y rápidamente escalaron a proyectos empresariales que requerían estaciones de trabajo, servidores y aulas híbridas. Hoy Zenit opera laboratorios, talleres y despliegues corporativos en más de 12 ciudades, manteniendo la transparencia y el acompañamiento humano como brújula.</string>
     <string name="title_equipo">Equipo fundador</string>
-    <string name="text_equipo">Laura Rojas – Estratega de innovación\nMateo Calderón – Arquitecto de soluciones\nSofía Nieto – Experta en experiencia de cliente</string>
+    <string name="text_equipo">Kevin Pinto – Estratega de innovación\nAlejandro Vargas – Arquitecto de soluciones</string>
 
     <!-- Misión visión -->
     <string name="title_mision">Misión</string>
@@ -112,8 +112,8 @@
     <string name="contacto_title">Conecta con Zenit</string>
     <string name="contacto_email">contacto@zenitdigital.com</string>
     <string name="contacto_phone">+57 320 555 1872</string>
-    <string name="contacto_address">Calle 93 #14-20, Bogotá</string>
-    <string name="contacto_hours">Soporte 24/7 - Showroom de lunes a sábado</string>
+    <string name="contacto_address">CR 24 #22-38 Bucaramanga-Santander</string>
+    <string name="contacto_hours">Soporte 24/7 de lunes a sábado</string>
 
     <!-- Redes -->
     <string name="redes_title">Redes oficiales</string>

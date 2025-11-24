@@ -3,6 +3,7 @@ package com.example.aplicacion_moviles3c;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,7 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class CatalogoActivity extends AppCompatActivity {
+public class CatalogoActivity extends AppCompatActivity implements CatalogAdapter.OnItemClickListener {
 
     private static final String CATEGORY_AUDIO = "audio";
     private static final String CATEGORY_PERIPHERALS = "peripherals";
@@ -58,6 +59,7 @@ public class CatalogoActivity extends AppCompatActivity {
 
     private void setupRecycler() {
         adapter = new CatalogAdapter();
+        adapter.setOnItemClickListener(this);
         binding.recyclerViewCatalogo.setLayoutManager(new LinearLayoutManager(this));
         binding.recyclerViewCatalogo.setAdapter(adapter);
     }
@@ -242,5 +244,10 @@ public class CatalogoActivity extends AppCompatActivity {
 
         binding.textViewEmptyState.setVisibility(filtered.isEmpty() ? View.VISIBLE : View.GONE);
         adapter.submitList(filtered);
+    }
+
+    @Override
+    public void onItemClick(CatalogItem item) {
+        Toast.makeText(this, "Has hecho clic en: " + item.getName(), Toast.LENGTH_SHORT).show();
     }
 }
