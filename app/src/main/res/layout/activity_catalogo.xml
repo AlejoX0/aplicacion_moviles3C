@@ -6,75 +6,129 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@color/zenit_silver"
+    android:background="@drawable/bg_gradient_primary"
     tools:context=".CatalogoActivity">
 
     <TextView
+        android:id="@+id/textViewCatalogoTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/catalogo_title"
         android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
-        android:textColor="@color/zenit_text_primary"
+        android:textColor="@android:color/white"
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/textViewCatalogoSubtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="@string/catalogo_subtitle"
         android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
-        android:textColor="@color/zenit_text_secondary" />
+        android:textColor="@android:color/white" />
 
-    <com.google.android.material.chip.ChipGroup
-        android:id="@+id/chipGroupCategorias"
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        app:singleSelection="true">
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp">
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chipTodos"
-            style="@style/Widget.Material3.Chip.Assist"
-            android:text="@string/catalogo_chip_todos"
-            android:checked="true" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chipAudifonos"
-            style="@style/Widget.Material3.Chip.Assist"
-            android:text="@string/catalogo_chip_audio" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/catalogo_filters_title"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                android:textColor="@color/zenit_text_primary"
+                android:textStyle="bold" />
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chipPerifericos"
-            style="@style/Widget.Material3.Chip.Assist"
-            android:text="@string/catalogo_chip_perifericos" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/catalogo_filters_subtitle"
+                android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                android:textColor="@color/zenit_text_secondary" />
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chipMousepads"
-            style="@style/Widget.Material3.Chip.Assist"
-            android:text="@string/catalogo_chip_mousepad" />
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupCategorias"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:singleSelection="true"
+                app:selectionRequired="false"
+                app:chipSpacingHorizontal="8dp"
+                app:chipSpacingVertical="8dp">
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chipMonitores"
-            style="@style/Widget.Material3.Chip.Assist"
-            android:text="@string/catalogo_chip_monitores" />
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipTodos"
+                    style="@style/Widget.Material3.Chip.Suggestion"
+                    android:checked="true"
+                    android:text="@string/catalogo_chip_todos" />
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chipAccesorios"
-            style="@style/Widget.Material3.Chip.Assist"
-            android:text="@string/catalogo_chip_accesorios" />
-    </com.google.android.material.chip.ChipGroup>
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipAudifonos"
+                    style="@style/Widget.Material3.Chip.Suggestion"
+                    android:text="@string/catalogo_chip_audio" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipPerifericos"
+                    style="@style/Widget.Material3.Chip.Suggestion"
+                    android:text="@string/catalogo_chip_perifericos" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipMousepads"
+                    style="@style/Widget.Material3.Chip.Suggestion"
+                    android:text="@string/catalogo_chip_mousepad" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipMonitores"
+                    style="@style/Widget.Material3.Chip.Suggestion"
+                    android:text="@string/catalogo_chip_monitores" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipAccesorios"
+                    style="@style/Widget.Material3.Chip.Suggestion"
+                    android:text="@string/catalogo_chip_accesorios" />
+            </com.google.android.material.chip.ChipGroup>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/textViewEmptyState"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/catalogo_empty_state"
+        android:textAlignment="center"
+        android:visibility="gone"
+        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+        android:textColor="@android:color/white" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewCatalogo"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="12dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:paddingBottom="4dp"
+        tools:listitem="@layout/item_catalogo" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonVolverMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/action_volver_menu" />
+        android:text="@string/action_volver_menu"
+        app:cornerRadius="12dp"
+        app:icon="@drawable/ic_equipo"
+        app:iconPadding="8dp"
+        app:iconTint="@android:color/white" />
 </LinearLayout>
