@@ -35,13 +35,10 @@ public class AgendarServicioActivity extends AppCompatActivity {
         appointmentStorage = new AppointmentStorage(this);
         selectedDateInMillis = calendarView.getDate();
 
-        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            @Override
-            public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
-                Calendar calendar = Calendar.getInstance();
-                calendar.set(year, month, dayOfMonth, 0, 0, 0);
-                selectedDateInMillis = calendar.getTimeInMillis();
-            }
+        calendarView.setOnDateChangeListener((view, year, month, dayOfMonth) -> {
+            Calendar calendar = Calendar.getInstance();
+            calendar.set(year, month, dayOfMonth, 0, 0, 0);
+            selectedDateInMillis = calendar.getTimeInMillis();
         });
 
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, new ArrayList<>());
