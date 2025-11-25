@@ -28,51 +28,86 @@
         android:textColor="@android:color/white" />
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardHero"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        app:cardBackgroundColor="@android:color/white"
+        app:cardBackgroundColor="@android:color/transparent"
         app:cardCornerRadius="18dp"
-        app:cardElevation="6dp">
+        app:cardElevation="0dp">
 
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/imageViewHero"
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
+                android:layout_height="220dp"
                 android:contentDescription="@string/catalogo_image_content_description"
                 android:scaleType="centerCrop"
                 android:src="@drawable/gallery_placeholder" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_hero_overlay" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
                 android:orientation="vertical"
-                android:padding="16dp">
+                android:padding="18dp">
+
+                <TextView
+                    android:id="@+id/textViewHeroCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_card"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="6dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="6dp"
+                    android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
+                    android:textColor="@color/zenit_blue"
+                    tools:text="Ultraportátiles" />
 
                 <TextView
                     android:id="@+id/textViewHeroTitle"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/catalogo_hero_title"
-                    android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
-                    android:textColor="@color/zenit_text_primary"
-                    android:textStyle="bold" />
+                    android:layout_marginTop="10dp"
+                    android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    tools:text="MacBook Air M3 13'' (2024)" />
 
                 <TextView
                     android:id="@+id/textViewHeroSubtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+                    android:textColor="@android:color/white"
+                    tools:text="Ligera, silenciosa y lista para edición en movimiento." />
+
+                <TextView
+                    android:id="@+id/textViewHeroPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="@string/catalogo_hero_subtitle"
-                    android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
-                    android:textColor="@color/zenit_text_secondary" />
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_chip_price"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="12dp"
+                    android:paddingBottom="8dp"
+                    android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    tools:text="$6.899.000 COP" />
             </LinearLayout>
-        </LinearLayout>
+        </FrameLayout>
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
