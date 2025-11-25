@@ -8,8 +8,6 @@
     android:foreground="?attr/selectableItemBackground"
     app:cardCornerRadius="18dp"
     app:cardElevation="3dp"
-    app:cardStrokeColor="@color/zenit_silver"
-    app:cardStrokeWidth="1dp"
     app:cardUseCompatPadding="true">
 
     <LinearLayout

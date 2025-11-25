@@ -80,9 +80,8 @@ public class CatalogoActivity extends AppCompatActivity implements CatalogAdapte
         binding.textViewHeroPrice.setText(heroItem.getPrice());
 
         Glide.with(this)
-                .load(heroItem.getImageUrl())
+                .load(heroItem.getImageResId())
                 .placeholder(R.drawable.gallery_placeholder)
-                .error(heroItem.getImageResId() != 0 ? heroItem.getImageResId() : R.drawable.gallery_placeholder)
                 .centerCrop()
                 .into(binding.imageViewHero);
     }
@@ -96,8 +95,8 @@ public class CatalogoActivity extends AppCompatActivity implements CatalogAdapte
                 "Chip Apple M3, 8GB RAM y SSD de 256GB con autonomía de hasta 18h.",
                 "Ligera, silenciosa y lista para edición en movimiento.",
                 "$6.899.000 COP",
-                R.drawable.gallery_placeholder,
-                "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mba13-midnight-select-202402?wid=2000&hei=1536&fmt=jpeg&qlt=90&.v=1707434878666"
+                R.drawable.macbook_air_m3,
+                null
         ));
         catalogItems.add(new CatalogItem(
                 "Dell XPS 14 (9440)",
@@ -106,8 +105,8 @@ public class CatalogoActivity extends AppCompatActivity implements CatalogAdapte
                 "Intel Core Ultra 7, pantalla OLED 3K y chasis de aluminio mecanizado.",
                 "Para ejecutivos que necesitan potencia y estilo en viajes.",
                 "$9.800.000 COP",
-                R.drawable.gallery_placeholder,
-                "https://i.dell.com/sites/csimages/Master_Imagery/all/xps-14-9440-laptop-black-gallery-1.png"
+                R.drawable.dell_xps_14,
+                null
         ));
         catalogItems.add(new CatalogItem(
                 "Lenovo ThinkPad X1 Carbon Gen 12",
@@ -116,8 +115,8 @@ public class CatalogoActivity extends AppCompatActivity implements CatalogAdapte
                 "Intel Core Ultra, chasis de fibra de carbono y certificación MIL-STD 810H.",
                 "Teclado legendario y conectividad 5G opcional para ejecutivos.",
                 "$8.450.000 COP",
-                R.drawable.gallery_placeholder,
-                "https://www.lenovo.com/medias/lenovo-laptop-thinkpad-x1-carbon-gen-12-front.png?context=bWFzdGVyfHJvb3R8MTYyODU4fGltYWdlL3BuZ3xoNmMvaGI5LzE2ODM1MjI4MTA4NTc0LnBuZ3wzODNhOGQwNWMyOWUyNTA2OTVhZjQ3MzRlN2UwZTUwMTJiZjMyZjdiMTA2YzRhN2NjZmY2YWYxNjQ5ZTU1NThh"
+                R.drawable.lenovo_thinkpad,
+                null
         ));
         catalogItems.add(new CatalogItem(
                 "iPhone 15 Pro",
@@ -126,8 +125,8 @@ public class CatalogoActivity extends AppCompatActivity implements CatalogAdapte
                 "Pantalla Super Retina XDR de 6.1'' y chip A17 Pro con USB-C.",
                 "Fotos ProRAW y video Log listos para postproducción móvil.",
                 "$5.799.000 COP",
-                R.drawable.gallery_placeholder,
-                "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-15-pro-finish-select-202309-6-7inch-bluetitanium_AV1?wid=5120&hei=2880&fmt=jpeg&qlt=80&.v=1692844597674"
+                R.drawable.iphone_15_pro,
+                null
         ));
         catalogItems.add(new CatalogItem(
                 "Samsung Galaxy S24 Ultra",
@@ -136,8 +135,8 @@ public class CatalogoActivity extends AppCompatActivity implements CatalogAdapte
                 "Pantalla QHD+ de 6.8'' a 120Hz, S-Pen incluido y cámara 200MP.",
                 "Integración Galaxy AI para notas, traducción y retoque.",
                 "$6.499.900 COP",
-                R.drawable.gallery_placeholder,
-                "https://images.samsung.com/is/image/samsung/p6pim/co/sm-s928bzageeo/gallery/co-galaxy-s24-ultra-sm-s928-sm-s928bzageeo-538107658"
+                R.drawable.samsung_galaxy_s24_ultra,
+                null
         ));
         catalogItems.add(new CatalogItem(
                 "Sony WH-1000XM5",
@@ -146,8 +145,8 @@ public class CatalogoActivity extends AppCompatActivity implements CatalogAdapte
                 "Cancelación activa de ruido, 30 horas de batería y modo atención rápida.",
                 "Auriculares referencia para viajes y videollamadas.",
                 "$1.690.000 COP",
-                R.drawable.gallery_placeholder,
-                "https://m.media-amazon.com/images/I/71CGl5+j51L._AC_SL1500_.jpg"
+                R.drawable.sony_wh1000xm5,
+                null
         ));
         catalogItems.add(new CatalogItem(
                 "Bose QuietComfort Ultra Earbuds",
@@ -156,8 +155,8 @@ public class CatalogoActivity extends AppCompatActivity implements CatalogAdapte
                 "Cancelación adaptativa, Bluetooth multipunto y certificación IPX4.",
                 "Audio inmersivo para jornadas híbridas y desplazamientos.",
                 "$1.580.000 COP",
-                R.drawable.gallery_placeholder,
-                "https://m.media-amazon.com/images/I/51lTQGHlZhL._AC_SL1500_.jpg"
+                R.drawable.bose_earbuds,
+                null
         ));
         catalogItems.add(new CatalogItem(
                 "PlayStation 5 Slim",
@@ -166,8 +165,8 @@ public class CatalogoActivity extends AppCompatActivity implements CatalogAdapte
                 "CPU AMD Zen 2, SSD ultra rápido y mando DualSense con hápticos.",
                 "Consola compacta para salas de experiencia y torneos.",
                 "$3.299.000 COP",
-                R.drawable.gallery_placeholder,
-                "https://m.media-amazon.com/images/I/61-0VnlzvWL._SL1500_.jpg"
+                R.drawable.playstation_5,
+                null
         ));
         catalogItems.add(new CatalogItem(
                 "Nintendo Switch OLED",
@@ -176,8 +175,8 @@ public class CatalogoActivity extends AppCompatActivity implements CatalogAdapte
                 "Pantalla OLED de 7'', dock con puerto LAN y 64GB de almacenamiento.",
                 "Ideal para activaciones, zonas de descanso y gaming familiar.",
                 "$1.799.000 COP",
-                R.drawable.gallery_placeholder,
-                "https://m.media-amazon.com/images/I/51YsGQL8w4L._SL1000_.jpg"
+                R.drawable.nintendo_switch_oled,
+                null
         ));
         catalogItems.add(new CatalogItem(
                 "Google Nest Hub (2da gen)",
@@ -186,8 +185,8 @@ public class CatalogoActivity extends AppCompatActivity implements CatalogAdapte
                 "Asistente con pantalla de 7'' para dashboards de salas y control de IoT.",
                 "Micrófonos de campo lejano y sensor Soli para gestos.",
                 "$629.900 COP",
-                R.drawable.gallery_placeholder,
-                "https://m.media-amazon.com/images/I/61kNq1DqdzL._AC_SL1500_.jpg"
+                R.drawable.google_nest_hub,
+                null
         ));
         catalogItems.add(new CatalogItem(
                 "Philips Hue Starter Kit (E26)",
@@ -196,8 +195,8 @@ public class CatalogoActivity extends AppCompatActivity implements CatalogAdapte
                 "Incluye bridge, 3 bombillos white & color y control desde app o asistentes.",
                 "Automatiza escenas de oficinas y zonas creativas.",
                 "$999.900 COP",
-                R.drawable.gallery_placeholder,
-                "https://m.media-amazon.com/images/I/71QWLiqLDhL._AC_SL1500_.jpg"
+                R.drawable.philips,
+                null
         ));
 
         catalogItems.add(new CatalogItem(
@@ -207,8 +206,8 @@ public class CatalogoActivity extends AppCompatActivity implements CatalogAdapte
                 "Brazo articulado, filtro anti-pop y compatibilidad plug & play para PC y consolas.",
                 "Optimiza voces claras en grabaciones y videollamadas nocturnas.",
                 "$489.900 COP",
-                R.drawable.gallery_placeholder,
-                "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?auto=format&fit=crop&w=1600&q=80"
+                R.drawable.microfono,
+                null
         ));
 
         catalogItems.add(new CatalogItem(
@@ -218,8 +217,8 @@ public class CatalogoActivity extends AppCompatActivity implements CatalogAdapte
                 "Teclado mecánico retroiluminado con switch táctil y mouse ergonómico con DPI ajustable.",
                 "Set balanceado para estaciones mixtas de gaming y productividad.",
                 "$359.900 COP",
-                R.drawable.gallery_placeholder,
-                "https://images.unsplash.com/photo-1511367466-5a9c61e41425?auto=format&fit=crop&w=1600&q=80"
+                R.drawable.teclado_gamer,
+                null
         ));
 
         catalogItems.add(new CatalogItem(
@@ -229,8 +228,8 @@ public class CatalogoActivity extends AppCompatActivity implements CatalogAdapte
                 "Panel 2K de 27'' con 75Hz, marco ultradelgado y conectividad HDMI/DisplayPort.",
                 "Perfecto para edición, dashboards y espacios minimalistas.",
                 "$1.290.000 COP",
-                R.drawable.gallery_placeholder,
-                "https://images.unsplash.com/photo-1587202372775-98927a70a03a?auto=format&fit=crop&w=1600&q=80"
+                R.drawable.monitor,
+                null
         ));
     }
 
@@ -263,11 +262,6 @@ public class CatalogoActivity extends AppCompatActivity implements CatalogAdapte
 
     @Override
     public void onItemClick(CatalogItem item) {
-        if (item.getImageUrl() == null || item.getImageUrl().isEmpty()) {
-            return;
-        }
-
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(item.getImageUrl()));
-        startActivity(intent);
+        // No hacer nada por ahora, ya que no tenemos una URL a la cual navegar.
     }
 }

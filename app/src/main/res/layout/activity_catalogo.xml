@@ -9,6 +9,7 @@
     android:background="@drawable/bg_gradient_primary"
     tools:context=".CatalogoActivity">
 
+    <!-- TITULO -->
     <TextView
         android:id="@+id/textViewCatalogoTitle"
         android:layout_width="match_parent"
@@ -18,6 +19,7 @@
         android:textColor="@android:color/white"
         android:textStyle="bold" />
 
+    <!-- SUBTITULO -->
     <TextView
         android:id="@+id/textViewCatalogoSubtitle"
         android:layout_width="match_parent"
@@ -27,6 +29,7 @@
         android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
         android:textColor="@android:color/white" />
 
+    <!-- HERO CARD -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardHero"
         android:layout_width="match_parent"
@@ -44,10 +47,11 @@
                 android:id="@+id/imageViewHero"
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
-                android:contentDescription="@string/catalogo_image_content_description"
                 android:scaleType="centerCrop"
-                android:src="@drawable/gallery_placeholder" />
+                android:src="@drawable/gallery_placeholder"
+                android:contentDescription="@string/catalogo_image_content_description" />
 
+            <!-- Verifica que bg_hero_overlay exista -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -65,10 +69,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_card"
-                    android:paddingLeft="10dp"
-                    android:paddingTop="6dp"
-                    android:paddingRight="10dp"
-                    android:paddingBottom="6dp"
+                    android:padding="6dp"
                     android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
                     android:textColor="@color/zenit_blue"
                     tools:text="Ultraportátiles" />
@@ -98,10 +99,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/bg_chip_price"
-                    android:paddingLeft="12dp"
-                    android:paddingTop="8dp"
-                    android:paddingRight="12dp"
-                    android:paddingBottom="8dp"
+                    android:padding="8dp"
                     android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
                     android:textColor="@android:color/white"
                     android:textStyle="bold"
@@ -110,13 +108,14 @@
         </FrameLayout>
     </com.google.android.material.card.MaterialCardView>
 
+    <!-- FILTROS -->
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        app:cardBackgroundColor="@android:color/white"
         app:cardCornerRadius="16dp"
-        app:cardElevation="4dp">
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="@android:color/white">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -145,9 +144,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                app:chipSpacingHorizontal="8dp"
-                app:chipSpacingVertical="8dp"
-                app:selectionRequired="false"
                 app:singleSelection="true">
 
                 <com.google.android.material.chip.Chip
@@ -184,6 +180,7 @@
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
+    <!-- EMPTY STATE -->
     <TextView
         android:id="@+id/textViewEmptyState"
         android:layout_width="match_parent"
@@ -195,6 +192,7 @@
         android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
         android:textColor="@android:color/white" />
 
+    <!-- RECYCLER -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewCatalogo"
         android:layout_width="match_parent"
@@ -205,13 +203,13 @@
         android:paddingBottom="8dp"
         tools:listitem="@layout/item_catalogo" />
 
+    <!-- BOTÓN VOLVER -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonVolverMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/action_volver_menu"
-        app:cornerRadius="12dp"
         app:icon="@drawable/ic_equipo"
         app:iconPadding="8dp"
         app:iconTint="@android:color/white" />

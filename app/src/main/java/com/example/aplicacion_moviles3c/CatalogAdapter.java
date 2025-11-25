@@ -41,7 +41,7 @@ public class CatalogAdapter extends ListAdapter<CatalogItem, CatalogAdapter.View
                     && oldItem.getPrice().equals(newItem.getPrice())
                     && oldItem.getHighlight().equals(newItem.getHighlight())
                     && oldItem.getCategoryKey().equals(newItem.getCategoryKey())
-                    && oldItem.getImageUrl().equals(newItem.getImageUrl());
+                    && oldItem.getImageResId() == newItem.getImageResId();
         }
     };
 
@@ -90,9 +90,8 @@ public class CatalogAdapter extends ListAdapter<CatalogItem, CatalogAdapter.View
             categoryChip.setText(item.getCategoryLabel());
 
             Glide.with(hero.getContext())
-                    .load(item.getImageUrl())
+                    .load(item.getImageResId())
                     .placeholder(R.drawable.gallery_placeholder)
-                    .error(item.getImageResId() != 0 ? item.getImageResId() : R.drawable.gallery_placeholder)
                     .centerCrop()
                     .into(hero);
         }
