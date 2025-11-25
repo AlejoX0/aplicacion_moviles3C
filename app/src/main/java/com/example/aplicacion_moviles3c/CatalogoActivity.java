@@ -38,7 +38,7 @@ public class CatalogoActivity extends AppCompatActivity implements CatalogAdapte
         configureFilters();
         setupRecycler();
         seedCatalog();
-        bindHeroImage();
+        updateHeroSection(catalogItems);
         adapter.submitList(new ArrayList<>(catalogItems));
 
         binding.chipGroupCategorias.setOnCheckedStateChangeListener((group, checkedIds) -> applyFilter(checkedIds));
@@ -66,15 +66,23 @@ public class CatalogoActivity extends AppCompatActivity implements CatalogAdapte
         binding.recyclerViewCatalogo.setAdapter(adapter);
     }
 
-    private void bindHeroImage() {
-        if (catalogItems.isEmpty()) {
+    private void updateHeroSection(List<CatalogItem> items) {
+        if (items == null || items.isEmpty()) {
+            binding.cardHero.setVisibility(View.GONE);
             return;
         }
 
+        binding.cardHero.setVisibility(View.VISIBLE);
+        CatalogItem heroItem = items.get(0);
+        binding.textViewHeroTitle.setText(heroItem.getName());
+        binding.textViewHeroSubtitle.setText(heroItem.getHighlight());
+        binding.textViewHeroCategory.setText(heroItem.getCategoryLabel());
+        binding.textViewHeroPrice.setText(heroItem.getPrice());
+
         Glide.with(this)
-                .load(catalogItems.get(0).getImageUrl())
+                .load(heroItem.getImageUrl())
                 .placeholder(R.drawable.gallery_placeholder)
-                .error(R.drawable.gallery_placeholder)
+                .error(heroItem.getImageResId() != 0 ? heroItem.getImageResId() : R.drawable.gallery_placeholder)
                 .centerCrop()
                 .into(binding.imageViewHero);
     }
@@ -191,12 +199,46 @@ public class CatalogoActivity extends AppCompatActivity implements CatalogAdapte
                 R.drawable.gallery_placeholder,
                 "https://m.media-amazon.com/images/I/71QWLiqLDhL._AC_SL1500_.jpg"
         ));
+
+        catalogItems.add(new CatalogItem(
+                "Micrófono RGB para streaming",
+                CATEGORY_AUDIO,
+                "Audio",
+                "Brazo articulado, filtro anti-pop y compatibilidad plug & play para PC y consolas.",
+                "Optimiza voces claras en grabaciones y videollamadas nocturnas.",
+                "$489.900 COP",
+                R.drawable.gallery_placeholder,
+                "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?auto=format&fit=crop&w=1600&q=80"
+        ));
+
+        catalogItems.add(new CatalogItem(
+                "Combo teclado + mouse RGB",
+                CATEGORY_GAMING,
+                "Gaming",
+                "Teclado mecánico retroiluminado con switch táctil y mouse ergonómico con DPI ajustable.",
+                "Set balanceado para estaciones mixtas de gaming y productividad.",
+                "$359.900 COP",
+                R.drawable.gallery_placeholder,
+                "https://images.unsplash.com/photo-1511367466-5a9c61e41425?auto=format&fit=crop&w=1600&q=80"
+        ));
+
+        catalogItems.add(new CatalogItem(
+                "Monitor ASUS 27'' IPS 2K",
+                CATEGORY_LAPTOPS,
+                "Ultraportátiles",
+                "Panel 2K de 27'' con 75Hz, marco ultradelgado y conectividad HDMI/DisplayPort.",
+                "Perfecto para edición, dashboards y espacios minimalistas.",
+                "$1.290.000 COP",
+                R.drawable.gallery_placeholder,
+                "https://images.unsplash.com/photo-1587202372775-98927a70a03a?auto=format&fit=crop&w=1600&q=80"
+        ));
     }
 
     private void applyFilter(List<Integer> checkedIds) {
         if (checkedIds == null || checkedIds.isEmpty() || checkedIds.get(0) == R.id.chipTodos) {
             binding.textViewEmptyState.setVisibility(View.GONE);
             adapter.submitList(new ArrayList<>(catalogItems));
+            updateHeroSection(catalogItems);
             return;
         }
 
@@ -215,7 +257,8 @@ public class CatalogoActivity extends AppCompatActivity implements CatalogAdapte
         }
 
         binding.textViewEmptyState.setVisibility(filtered.isEmpty() ? View.VISIBLE : View.GONE);
-        adapter.submitList(filtered);
+        adapter.submitList(new ArrayList<>(filtered));
+        updateHeroSection(filtered);
     }
 
     @Override
